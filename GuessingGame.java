@@ -32,6 +32,6 @@ public class GuessingGame {
             System.out.print("\ndo you want to play again?(y/n) : ");
             playAgain = in.next().toLowerCase().charAt(0);
         }while(playAgain=='y');
-
+        in.close();
     }
 }
