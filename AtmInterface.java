@@ -82,23 +82,23 @@ public class AtmInterface {
         BankAccount userAccount = new BankAccount(1000.0);
         ATM atm = new ATM(userAccount);
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
 
         while (true) {
             atm.displayOptions();
             System.out.print("Enter option (1-3): ");
-            int option = scanner.nextInt();
+            int option = in.nextInt();
 
             if (option == 3) {
                 atm.processTransaction(option, 0); // Check balance doesn't require an amount
             } else {
                 System.out.print("Enter amount: ");
-                double amount = scanner.nextDouble();
+                double amount = in.nextDouble();
                 atm.processTransaction(option, amount);
             }
 
             System.out.print("Do you want to perform another transaction? (yes/no): ");
-            String continueTransaction = scanner.next().toLowerCase();
+            String continueTransaction = in.next().toLowerCase();
 
             if (!continueTransaction.equals("yes")) {
                 System.out.println("Thank you for using the ATM. Goodbye!");
@@ -106,6 +106,6 @@ public class AtmInterface {
             }
         }
 
-        scanner.close();
+        in.close();
     }
 }
